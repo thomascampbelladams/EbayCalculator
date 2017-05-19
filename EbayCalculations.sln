@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EbayCalculations", "EbayCalculations\EbayCalculations.csproj", "{C1F8FF5D-5959-41D0-9553-530E2F0A2B21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EbayCalculations.Tests", "EbayCalculations.Tests\EbayCalculations.Tests.csproj", "{3D2A438C-21E1-4E62-89CB-689A313399AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1F8FF5D-5959-41D0-9553-530E2F0A2B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1F8FF5D-5959-41D0-9553-530E2F0A2B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1F8FF5D-5959-41D0-9553-530E2F0A2B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1F8FF5D-5959-41D0-9553-530E2F0A2B21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D2A438C-21E1-4E62-89CB-689A313399AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D2A438C-21E1-4E62-89CB-689A313399AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D2A438C-21E1-4E62-89CB-689A313399AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D2A438C-21E1-4E62-89CB-689A313399AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

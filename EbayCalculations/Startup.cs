@@ -1,6 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿// --------------------------------------------------------------------------------------------------------------------
+// <copyright file="Startup.cs" company="Thomas Inc">
+//   AH SHIET
+// </copyright>
+// <summary>
+//   Defines the Startup type.
+// </summary>
+// --------------------------------------------------------------------------------------------------------------------
+
 using Microsoft.Owin;
 using Owin;
 
@@ -8,11 +14,21 @@ using Owin;
 
 namespace EbayCalculations
 {
+    /// <summary>
+    /// The startup.
+    /// </summary>
     public partial class Startup
     {
+        /// <summary>
+        /// The configuration.
+        /// </summary>
+        /// <param name="app">
+        /// The app.
+        /// </param>
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+            
+            this.ConfigureAuth(app);
         }
     }
 }

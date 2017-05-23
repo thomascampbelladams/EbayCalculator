@@ -39,6 +39,7 @@ namespace EbayCalculations.Controllers
         /// The <see cref="Task"/>.
         /// </returns>
         [ResponseType(typeof(Item))]
+        [HttpGet]
         public async Task<IHttpActionResult> Get()
         {
             ICollection items = await (from i in this.db.Items select i).ToListAsync();
@@ -63,6 +64,7 @@ namespace EbayCalculations.Controllers
         /// </returns>
         [SuppressMessage("StyleCop.CSharp.DocumentationRules", "SA1650:ElementDocumentationMustBeSpelledCorrectly", Justification = "Reviewed. Suppression is OK here.")]
         [ResponseType(typeof(Item))]
+        [HttpPost]
         public async Task<IHttpActionResult> Post(Item ebayItem)
         {
             if (!this.ModelState.IsValid)

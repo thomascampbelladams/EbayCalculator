@@ -79,7 +79,6 @@ namespace EbayCalculations.Models
         /// <summary>
         /// Gets or sets the person sold to.
         /// </summary>
-        [Required]
         [DisplayName("Person the item was sold to")]
         [ForeignKey("PersonSoldToId")]
         public virtual People PersonSoldTo { get; set; }
@@ -175,10 +174,5 @@ namespace EbayCalculations.Models
         /// </summary>
         [DisplayName("Delivery Address")]
         public string DeliveryAddress { get; set; }
-
-        /// <summary>
-        /// Gets or sets the item.
-        /// </summary>
-        public virtual Item Item { get; set; }
     }
 }

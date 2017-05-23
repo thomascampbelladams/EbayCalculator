@@ -34,3 +34,36 @@ textarea {
         padding: 10px 15px;
     }
 }
+
+thead tr {
+    border: 1px solid black;
+    margin: 7px;
+}
+
+table#content {
+    margin-top: 10px;
+}
+
+th {
+    border-right: 1px solid black;
+}
+
+tbody tr {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+    tbody tr td {
+        border-right: 1px dashed black;
+    }
+
+        tbody tr td.positive-price {
+            color: #1E9E1E;
+            font-weight: 700;
+        }
+
+        tbody tr td.negative-price {
+            color: #AF0000;
+            font-weight: 700;
+        }

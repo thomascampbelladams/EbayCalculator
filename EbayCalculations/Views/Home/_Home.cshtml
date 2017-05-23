@@ -1,21 +1,34 @@
 ﻿<div id="bodyContainer" ng-app="EbayCalculations">
-    <section id="content" ng-controller="ItemController">
-        <div ng-init="getAllItems()">
-            <div class="container" ng-repeat="item in items">
-                <div class="row">
-                    <p>{item.Id}</p>
-                    <p>{item.PersonSoldToId}</p>
-                    <p>{item.Name}</p>
-                    <p>{item.Price}</p>
-                    <p>{item.ShippingPaidByBuyer}</p>
-                    <p>{item.ShippingPaidBySeller}</p>
-                    <p>{item.ShippingContainerPrice}</p>
-                    <p>{item.PaypalFee}</p>
-                    <p>{item.EbayFee}</p>
-                    <p>{item.SoldDate}</p>
-                    <p>{item.Delivered}</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <table id="content" ng-controller="ItemController">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Person Sold To Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Shipping Paid By Buyer</th>
+                <th>Shipping Paid By Seller</th>
+                <th>Shipping Container Price</th>
+                <th>Paypal Fee</th>
+                <th>Ebay Fee</th>
+                <th>Sold Date</th>
+                <th>Delivered</th>
+            </tr>
+        </thead>
+        <tbody ng-init="getAllItems()">
+            <tr ng-repeat="item in items">
+                <td>{{item.id}}</td>
+                <td>{{item.personSoldToId}}</td>
+                <td>{{item.name}}</td>
+                <td ng-class="item.price > 0 ? 'positive-price' : 'negative-price'">{{item.price | currency}}</td>
+                <td ng-class="item.price > 0 ? 'positive-price' : 'negative-price'">{{item.shippingPaidByBuyer | currency}}</td>
+                <td ng-class="item.price > 0 ? 'positive-price' : 'negative-price'">{{item.shippingPaidBySeller | currency}}</td>
+                <td ng-class="item.price > 0 ? 'positive-price' : 'negative-price'">{{item.shippingContainerPrice | currency}}</td>
+                <td ng-class="item.price > 0 ? 'positive-price' : 'negative-price'">{{item.paypalFee | currency}}</td>
+                <td ng-class="item.price > 0 ? 'positive-price' : 'negative-price'">{{item.ebayFee | currency}}</td>
+                <td>{{item.soldDate | date: 'shortDate'}}</td>
+                <td>{{item.delivered}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

@@ -6,16 +6,17 @@
             $scope.working = false;
             $scope.items = [];
 
-            $scope.getAllItems = function() {
+            $scope.getAllItems = function () {
                 $scope.working = true;
 
-                $http.get('/api/items').success(function(data, status, headers, config) {
-                    $scope.working = false;
-                    $scope.items = data;
-                }).error(function(data, status, headers, config) {
-                    $scope.title = "Oops... something went wrong";
-                    $scope.working = false;
-                });
+                $http.get('/api/items', { headers: { Authorization: 'Bearer ' + sessionStorage.accessToken } })
+                    .then(function (response, status, headers, config) {
+                        $scope.working = false;
+                        $scope.items = response.data;
+                    }, function (data, status, headers, config) {
+                        $scope.title = "Oops... something went wrong";
+                        $scope.working = false;
+                    });
             };
 
             $scope.sendItem = function(option) {

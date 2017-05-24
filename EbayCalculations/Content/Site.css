@@ -56,14 +56,19 @@ tbody tr {
 
     tbody tr td {
         border-right: 1px dashed black;
+        text-align: center;
     }
 
-        tbody tr td.positive-price {
+    tfoot tr td {
+        text-align: center;
+    }
+
+        .positive-price {
             color: #1E9E1E;
             font-weight: 700;
         }
 
-        tbody tr td.negative-price {
+        .negative-price {
             color: #AF0000;
             font-weight: 700;
         }

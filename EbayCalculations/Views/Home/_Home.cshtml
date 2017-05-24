@@ -4,31 +4,42 @@
             <tr>
                 <th>ID</th>
                 <th>Person Sold To Id</th>
-                <th>Name</th>
-                <th>Price</th>
+                <th ng-click="orderByField='name'; reverseSort = !reverseSort">Name</th>
+                <th ng-click="orderByField='price'; reverseSort = !reverseSort">Price</th>
                 <th>Shipping Paid By Buyer</th>
                 <th>Shipping Paid By Seller</th>
                 <th>Shipping Container Price</th>
                 <th>Paypal Fee</th>
-                <th>Ebay Fee</th>
+                <th ng-click="orderByField='ebayFee'; reverseSort = !reverseSort">Ebay Fee</th>
                 <th>Sold Date</th>
                 <th>Delivered</th>
             </tr>
         </thead>
         <tbody ng-init="getAllItems()">
-            <tr ng-repeat="item in items">
+            <tr ng-repeat="item in items | orderBy: orderByField:reverseSort">
                 <td>{{item.id}}</td>
                 <td>{{item.personSoldToId}}</td>
                 <td>{{item.name}}</td>
                 <td ng-class="item.price > 0 ? 'positive-price' : 'negative-price'">{{item.price | currency}}</td>
-                <td ng-class="item.price > 0 ? 'positive-price' : 'negative-price'">{{item.shippingPaidByBuyer | currency}}</td>
-                <td ng-class="item.price > 0 ? 'positive-price' : 'negative-price'">{{item.shippingPaidBySeller | currency}}</td>
-                <td ng-class="item.price > 0 ? 'positive-price' : 'negative-price'">{{item.shippingContainerPrice | currency}}</td>
-                <td ng-class="item.price > 0 ? 'positive-price' : 'negative-price'">{{item.paypalFee | currency}}</td>
-                <td ng-class="item.price > 0 ? 'positive-price' : 'negative-price'">{{item.ebayFee | currency}}</td>
+                <td ng-class="item.shippingPaidByBuyer > 0 ? 'positive-price' : 'negative-price'">{{item.shippingPaidByBuyer | currency}}</td>
+                <td ng-class="item.shippingPaidBySeller > 0 ? 'positive-price' : 'negative-price'">{{item.shippingPaidBySeller | currency}}</td>
+                <td ng-class="item.shippingContainerPrice > 0 ? 'positive-price' : 'negative-price'">{{item.shippingContainerPrice | currency}}</td>
+                <td ng-class="item.paypalFee > 0 ? 'positive-price' : 'negative-price'">{{item.paypalFee | currency}}</td>
+                <td ng-class="item.ebayFee > 0 ? 'positive-price' : 'negative-price'">{{item.ebayFee | currency}}</td>
                 <td>{{item.soldDate | date: 'shortDate'}}</td>
                 <td>{{item.delivered}}</td>
             </tr>
         </tbody>
+        <tfoot ng-init="getSummations()">
+            <tr>
+                <td colspan="3">Sums:</td>
+                <td ng-class="summations.price > 0 ? 'positive-price' : 'negative-price'">{{summations.price | currency}}</td>
+                <td ng-class="summations.shippingPaidByBuyer > 0 ? 'positive-price' : 'negative-price'">{{summations.shippingPaidByBuyer | currency}}</td>
+                <td ng-class="summations.shippingPaidBySeller > 0 ? 'positive-price' : 'negative-price'">{{summations.shippingPaidBySeller | currency}}</td>
+                <td ng-class="summations.shippingContainerPrice > 0 ? 'positive-price' : 'negative-price'">{{summations.shippingContainerPrice | currency}}</td>
+                <td ng-class="summations.paypalFee > 0 ? 'positive-price' : 'negative-price'">{{summations.paypalFee | currency}}</td>
+                <td ng-class="summations.ebayFee > 0 ? 'positive-price' : 'negative-price'">{{summations.ebayFee | currency}}</td>
+            </tr>
+        </tfoot>
     </table>
 </div>
